@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h1>Onboarding</h1>
         <div class="d-flex">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add New Employee</button>
+            <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add New Employee</button>
         </div>
     </div>
 </nav>
@@ -20,16 +20,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>e</td>
-            <td>f</td>
+        <tr *ngFor="let row of employeeData">
+            <td>{{ row.id }}</td>
+            <td>{{ row.fullName }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.mobile }}</td>
+            <td>{{ row.job }}</td>
+            <td>{{ row.department }}</td>
+            
             <th>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button (click)="onEdit(row);" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteEmployee(row)">Delete</button>
             </th>
         </tr>
     </tbody>
@@ -68,8 +69,9 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAdd" id="cancel" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="showUpdate" id="cancel" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
             </div>
         </div>
     </div>

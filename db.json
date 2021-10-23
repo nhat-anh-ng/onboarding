@@ -1,18 +1,39 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": 2,
+      "fullName": "qgds",
+      "email": "s",
+      "mobile": "d",
+      "job": "q",
+      "department": "s"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 3,
+      "fullName": "qgsvdfv",
+      "email": "s",
+      "mobile": "d",
+      "job": "q",
+      "department": "s"
+    },
+    {
+      "id": 4,
+      "fullName": "n",
+      "email": "x",
+      "mobile": "s",
+      "job": "g",
+      "department": "r"
+    },
+    {
+      "id": 5,
+      "fullName": "v",
+      "email": "s",
+      "mobile": "g",
+      "job": "z",
+      "department": "z"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
